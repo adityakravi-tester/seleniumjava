@@ -1,0 +1,40 @@
+Try all the xpaths that you've learnt (basic, text-based, axes..)
+		1. Launch the URL
+		
+		2. Enter the username based on its label
+		//label[@for='username']/following-sibling::input
+		
+		3. Enter the password based on its label
+		//label[@for='password']/following-sibling::input
+		
+		4. Click Login
+		//input[@class='decorativeSubmit']
+		
+		5. Click on CRMSFA link
+		//a[normalize-space()='CRM/SFA']
+		
+		6. Click on Leads link
+		//a[text()='Leads']
+		
+		7. Click on Merge Leads link
+		//a[text()='Merge Leads']
+		
+		8. Click the first img icon
+		(//table[@class='twoColumnForm']//a)[1]
+		
+		9. Select the first resulting lead
+		//table[@class='x-grid3-row-table']//a
+		
+		10. Click the second img icon
+		(//table[@class='twoColumnForm']//a)[2]
+		
+		11. Select the second resulting lead
+		(//div[@class='x-grid3-body']/child::div[2]//a)[1]
+		
+		12. Click on Merge Lead (submit) button
+		//a[text()='Merge']
+		
+		13. Get the company name text based on its label
+		//span[text()='Company Name']/following::td[1]
+		
+		*/
