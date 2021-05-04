@@ -100,7 +100,8 @@ public class NykaShoppingBagTest {
 		//Get the grand total amount
 		String grandTotal = driver.findElementByXPath("//div[@class='sticky-bottom proceed-cart-btn']//div[@class='value']").getText();
 		System.out.println("The grand total is: "+ grandTotal);
-
+		
+		//Close ad near proceed button
 		driver.switchTo().frame(6);
 		driver.findElement(By.xpath("//div[@class='close']")).click();
       	driver.switchTo().defaultContent();
