@@ -27,6 +27,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -95,25 +96,26 @@ public class NykaShoppingBagTest {
 
 		//Click on bag
 		driver.findElement(By.className("AddBagIcon")).click();
-		
+
 		//Get the grand total amount
 		String grandTotal = driver.findElementByXPath("//div[@class='sticky-bottom proceed-cart-btn']//div[@class='value']").getText();
-		System.out.println("The grand total is: "+ grandTotal);
-		
-		//Close ad near proceed button
-//		driver.switchTo().frame(6);
-//		driver.findElement(By.xpath("//div[@class='close']")).click();
-//      	driver.switchTo().defaultContent();
-		 
-		//Click on proceed
-		Thread.sleep(3000);
-		WebElement proceedButton = driver.findElement(By.xpath("//div[@class='sticky-bottom proceed-cart-btn']//button/span"));
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].click();", proceedButton);
-		
+		System.out.println("The grand total (inclusive of shipping charges) is: "+ grandTotal);
+
+		try {
+			//Click on proceed
+			WebElement proceedButton = driver.findElement(By.xpath("//div[@class='sticky-bottom proceed-cart-btn']//button/span"));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("arguments[0].click();", proceedButton);
+		} catch (ElementNotInteractableException e) {
+			//Close ad near proceed button
+			driver.switchTo().frame(6);
+			driver.findElement(By.xpath("//div[@class='close']")).click();
+			driver.switchTo().defaultContent();
+		}
+
 		//Click on continue as guest
 		driver.findElementByXPath("//button[@class='btn full big']").click();
-		
+
 		//Verify grand total
 		String grandTotalCheck = driver.findElement(By.xpath("//div[@class='name' and text()='Grand Total']//following-sibling::div")).getText();
 		if(grandTotal.replaceAll("[^0-9]", "").equals(grandTotalCheck.replaceAll("[^0-9]",""))) {
@@ -121,8 +123,8 @@ public class NykaShoppingBagTest {
 		} else {
 			System.out.println("The amounts are not equal");
 		}
-		
+
 		//Close all windows
-		//driver.quit();
+		driver.quit();
 	}
 }
