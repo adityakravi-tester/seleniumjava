@@ -47,12 +47,11 @@ public class NykaShoppingBagTest {
 		driver.get("https://www.nykaa.com/");
 
 		Actions builder = new Actions(driver);
-
-		builder.moveToElement(driver.findElementByXPath("//a[text()='brands']")).
+		Thread.sleep(3000);
+		builder.moveToElement(driver.findElementByXPath("//a[text()='brands']")).click().
 		pause(Duration.ofSeconds(2)).
-		moveToElement(driver.findElementByXPath("//a[text()='Popular']")).
-		click(driver.findElementByXPath("//img[contains(@src,'lorealparis')]")).
-		perform();
+		moveToElement(driver.findElementByXPath("//a[text()='Popular']")).pause(Duration.ofSeconds(2)).perform();
+		driver.findElementByXPath("//img[contains(@src,'lorealparis')]").click();
 
 		List<String> windowHandles = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(windowHandles.get(1));
@@ -102,9 +101,9 @@ public class NykaShoppingBagTest {
 		System.out.println("The grand total is: "+ grandTotal);
 		
 		//Close ad near proceed button
-		driver.switchTo().frame(6);
-		driver.findElement(By.xpath("//div[@class='close']")).click();
-      	driver.switchTo().defaultContent();
+//		driver.switchTo().frame(6);
+//		driver.findElement(By.xpath("//div[@class='close']")).click();
+//      	driver.switchTo().defaultContent();
 		 
 		//Click on proceed
 		Thread.sleep(3000);
