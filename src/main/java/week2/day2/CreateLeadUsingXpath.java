@@ -1,13 +1,14 @@
 package week2.day2;
 
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CreateLeadUsingXpath {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	
+	@Test
+	public void createLeadTest() {
 		WebDriverManager.chromedriver().setup();
 		
 		ChromeDriver driver = new ChromeDriver();
