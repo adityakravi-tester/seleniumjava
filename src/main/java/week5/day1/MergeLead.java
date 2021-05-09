@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
 public class MergeLead extends BaseClass{
-	@Test
+	@Test()
 	public void mergeLead() throws InterruptedException {
 
 		driver.findElement(By.linkText("Leads")).click();

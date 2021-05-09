@@ -18,6 +18,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseClass {
 	
 	ChromeDriver driver;
+	
+	
 	@BeforeMethod
 	public void setup() {
 
