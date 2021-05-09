@@ -29,9 +29,8 @@ public class CreateLeadUsingTestNG extends BaseClass{
 		
 		driver.findElementById("createContactForm_description").sendKeys("This is a test description");
 		
-		WebElement phoneNumber = new WebDriverWait(driver, Duration.ofSeconds(5)).until(ExpectedConditions.visibilityOf(driver.findElement(By.id("createLeadForm_primaryPhoneNumber"))));
+		WebElement phoneNumber = driver.findElement(By.id("createLeadForm_primaryPhoneNumber"));
 		
-		phoneNumber.click();
 		phoneNumber.sendKeys("9003746012");
 		
 		driver.findElementById("createContactForm_primaryEmail").sendKeys("ravi981957632@gmail.com");
