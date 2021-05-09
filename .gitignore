@@ -1,2 +1,6 @@
 /target/
 /snaps/
+/test-output/
+/testng-annotations.xml
+/testng_paralled.xml
+/testng_seq.xml

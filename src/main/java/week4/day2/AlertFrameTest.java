@@ -42,6 +42,5 @@ public class AlertFrameTest {
 		
 		System.out.println(expectedText);
 		
-
 	}
 }
