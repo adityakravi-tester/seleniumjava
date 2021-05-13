@@ -1,13 +1,11 @@
 package week5.day2;
 
-import java.io.IOException;
 import org.openqa.selenium.By;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class DuplicateLead extends BaseClass{
 	
-	@Test(dataProvider = "sendData")
+	@Test(dataProvider = "setData", enabled =false)
 	public void duplicateLead(String emailId) throws InterruptedException {
 		driver.findElement(By.linkText("Leads")).click();
 		driver.findElement(By.linkText("Find Leads")).click();
@@ -20,10 +18,10 @@ public class DuplicateLead extends BaseClass{
 		driver.findElement(By.name("submitButton")).click();
 	}
 	
-	@DataProvider
-	public String[][] sendData() throws IOException {
-		return new DataInputProvider().sendData("DuplicateLead");
-	}
+//	@DataProvider
+//	public String[][] sendData() throws IOException {
+//		return new DataInputProvider().sendData("DuplicateLead");
+//	}
 }
 
 

@@ -1,13 +1,10 @@
 package week5.day2;
 
-import java.io.IOException;
-
 import org.openqa.selenium.By;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class DeleteLead extends BaseClass{
-	@Test(dataProvider = "sendData")
+	@Test(dataProvider = "setData", invocationCount = 2, threadPoolSize = 2)
 	public void deleteLead(String phoneNumber) throws InterruptedException {
 
 		driver.findElement(By.linkText("Leads")).click();
@@ -30,10 +27,10 @@ public class DeleteLead extends BaseClass{
 		}
 	}
 	
-	@DataProvider
-	public String[][] sendData() throws IOException {
-		return new DataInputProvider().sendData("DeleteLead");
-	}
+//	@DataProvider
+//	public String[][] sendData() throws IOException {
+//		return new DataInputProvider().sendData("DeleteLead");
+//	}
 }
 
 

@@ -1,15 +1,13 @@
 package week5.day2;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import org.openqa.selenium.By;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class MergeLead extends BaseClass{
-	@Test(dataProvider = "setData")
+	@Test(dataProvider = "setData", enabled =false)
 	public void mergeLead(String firstLeadName, String secondLeadName) throws InterruptedException {
 
 		driver.findElement(By.linkText("Leads")).click();
@@ -48,10 +46,10 @@ public class MergeLead extends BaseClass{
 		}
 	}
 	
-	@DataProvider
-	public String[][] setData() throws IOException{
-		return new DataInputProvider().sendData("MergeLead");
-	}
+//	@DataProvider
+//	public String[][] setData() throws IOException{
+//		return new DataInputProvider().sendData("MergeLead");
+//	}
 }
 
 

@@ -1,9 +1,6 @@
 package week5.day2;
 
-import java.io.IOException;
-
 import org.openqa.selenium.By;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class CreateLead extends BaseClass{
@@ -19,10 +16,10 @@ public class CreateLead extends BaseClass{
 		driver.findElement(By.name("submitButton")).click();
 	}
 	
-	@DataProvider
-	public String[][] setData() throws IOException{
-		return new DataInputProvider().sendData("CreateLead");
-	}
+//	@DataProvider
+//	public String[][] setData() throws IOException{
+//		return new DataInputProvider().sendData("CreateLead");
+//	}
 }
 
 

@@ -1,14 +1,11 @@
 package week5.day2;
 
-import java.io.IOException;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class EditLead extends BaseClass{
-	@Test(dataProvider = "setData")
+	@Test(dataProvider = "setData", enabled =false )
 	public void editLead(String firstName, String companyName) throws InterruptedException {
 
 		driver.findElement(By.linkText("Leads")).click();
@@ -24,10 +21,12 @@ public class EditLead extends BaseClass{
 		driver.findElement(By.name("submitButton")).click();
 	}
 	
-	@DataProvider
-	public String[][] setData() throws IOException {
-		return new DataInputProvider().sendData("EditLead");
-	}
+//	@DataProvider
+//	public String[][] setData(Method method) throws IOException {
+//		String name = method.getName();
+//		System.out.println("Test Name is: " + name);
+//		return new DataInputProvider().sendData("EditLead");
+//	}
 }
 
 
