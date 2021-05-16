@@ -4,9 +4,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import org.openqa.selenium.By;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class MergeLead extends BaseClass{
+	
+	@BeforeTest
+	public void setTestDataFile() {
+		excelDataFile = "MergeLead";
+	}
+	
 	@Test(dataProvider = "setData", enabled =false)
 	public void mergeLead(String firstLeadName, String secondLeadName) throws InterruptedException {
 

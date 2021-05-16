@@ -14,6 +14,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseClass {
 	
 	ChromeDriver driver;
+	public String excelDataFile;
 	
 	@Parameters({"url","username","password"})
 	@BeforeMethod
@@ -47,7 +48,7 @@ public class BaseClass {
 	public String[][] setData(ITestContext context) throws IOException {
 		String name = this.getClass().getSimpleName();
 		System.out.println("Test Name is: " + name);
-		return new DataInputProvider().sendData(name);
+		return new DataInputProvider().sendData(excelDataFile);
 	}
 	
 	@AfterTest()

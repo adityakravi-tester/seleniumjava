@@ -1,10 +1,17 @@
 package week5.day2;
 
 import org.openqa.selenium.By;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class DeleteLead extends BaseClass{
-	@Test(dataProvider = "setData", invocationCount = 2, threadPoolSize = 2)
+	
+	@BeforeTest
+	public void setTestDataFile() {
+		excelDataFile = "DeleteLead";
+	}
+	
+	@Test(dataProvider = "setData", invocationCount = 2)
 	public void deleteLead(String phoneNumber) throws InterruptedException {
 
 		driver.findElement(By.linkText("Leads")).click();

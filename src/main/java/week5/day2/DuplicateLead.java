@@ -1,9 +1,15 @@
 package week5.day2;
 
 import org.openqa.selenium.By;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class DuplicateLead extends BaseClass{
+	
+	@BeforeTest
+	public void setTestDataFile() {
+		excelDataFile = "DuplicateLead";
+	}
 	
 	@Test(dataProvider = "setData", enabled =false)
 	public void duplicateLead(String emailId) throws InterruptedException {

@@ -1,9 +1,16 @@
 package week5.day2;
 
 import org.openqa.selenium.By;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class CreateLead extends BaseClass{
+	
+	@BeforeTest
+	public void setTestDataFile() {
+		excelDataFile = "CreateLead";
+	}
+	
 	@Test(dataProvider = "setData")
 	public void createLead(String company, String firstName, String lastName, String phoneNumber, String emailId) {
 		driver.findElement(By.linkText("Leads")).click();

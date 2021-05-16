@@ -2,9 +2,16 @@ package week5.day2;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 public class EditLead extends BaseClass{
+	
+	@BeforeTest
+	public void setTestDataFile() {
+		excelDataFile = "EditLead";
+	}
+	
 	@Test(dataProvider = "setData", enabled =false )
 	public void editLead(String firstName, String companyName) throws InterruptedException {
 
