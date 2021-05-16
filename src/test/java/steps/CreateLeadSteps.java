@@ -1,28 +1,24 @@
 package steps;
 
 import java.util.List;
-import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class CreateLeadSteps {
-	public ChromeDriver driver;
+public class CreateLeadSteps extends BaseClass{
 	
-	@Given("the user opens the chrome browser and loads the url {string}")
-	public void openBrowserAndLaunchApp(String url) {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-		driver.get(url);
-	}
+//	@Given("the user opens the chrome browser and loads the url {string}")
+//	public void openBrowserAndLaunchApp(String url) {
+//		WebDriverManager.chromedriver().setup();
+//		driver = new ChromeDriver();
+//		driver.manage().window().maximize();
+//		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//		driver.get(url);
+//	}
 	
 	@Given("the user enters the credentials and logs in")
 	public void enterUserNamePassword(DataTable userCredentials) {
