@@ -9,7 +9,7 @@ import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
-public class CreateLeadSteps extends BaseClass{
+public class LeadStepDefinition extends BaseClass{
 	
 //	@Given("the user opens the chrome browser and loads the url {string}")
 //	public void openBrowserAndLaunchApp(String url) {
