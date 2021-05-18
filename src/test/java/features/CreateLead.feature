@@ -8,7 +8,8 @@ And the user is on home page
 
 @regression
 Scenario Outline: As a valid user I want to create a lead with valid details
-Given the user is on create lead page
+Given the user is on leads page
+And the user navigates to create lead page
 And the user enters the required details
 	|<company>|<firstName>|<lastName>|<phoneNo>|
 When the user click on create lead button
@@ -18,4 +19,4 @@ And the user has created a lead
 Examples:
 | company |firstName|lastName|  phoneNo   |
 |   TCS   | Aditya  |Ravi    |  9003746012|
-#| Infosys | Amit    |Kumar   |  8957653112|
+| Infosys | Amit    |Kumar   |  8957653112|
