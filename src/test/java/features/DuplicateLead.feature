@@ -1,4 +1,4 @@
-Feature: Edit a lead in leaftaps
+Feature: Duplicate a lead in leaftaps
 
 Background: Login as a valid user
 #Given the user opens the chrome browser and loads the url 'http://leaftaps.com/opentaps/control/login'
