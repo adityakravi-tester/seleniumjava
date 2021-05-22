@@ -7,6 +7,7 @@ import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -15,6 +16,11 @@ public class BaseClass {
 	
 	ChromeDriver driver;
 	public String excelDataFile;
+	
+	@BeforeSuite
+	public void beforeSuite(ITestContext context) {
+	  System.out.println("All tests are: "+ context.getAllTestMethods().length);
+	}
 	
 	@Parameters({"url","username","password"})
 	@BeforeMethod
@@ -37,6 +43,7 @@ public class BaseClass {
 		driver.findElementByClassName("decorativeSubmit").click();
 		
 		driver.findElementByXPath("//a[contains(text(),'CRM/SFA')]").click();
+		
 	}
 	
 	@AfterMethod
