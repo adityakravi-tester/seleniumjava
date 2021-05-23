@@ -6,11 +6,11 @@
 	<parameter name="password" value="crmsfa"></parameter>
 	<test thread-count="5" name="Test">
 		<classes>
-			<!-- <class name="week5.day2.CreateLead" /> -->
+			<class name="week5.day2.CreateLead" /> 
 			<class name="week5.day2.DeleteLead" />
-			<!-- <class name="week5.day2.DuplicateLead" />
+			<class name="week5.day2.DuplicateLead" />
 			<class name="week5.day2.EditLead" />
-			<class name="week5.day2.MergeLead" /> -->
+			<class name="week5.day2.MergeLead" />
 		</classes>
 	</test> <!-- Test -->
 </suite> <!-- Suite -->

@@ -1,6 +1,9 @@
 package steps;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import io.cucumber.datatable.DataTable;
@@ -155,5 +158,25 @@ public class LeadStepDefinition extends BaseClass{
     } else {
         System.out.println("Text not matched/Multiple leads found with same input");
     }
+  }
+  
+  @Given("the user clicks on merge lead")
+  public void clickOnMergeLeads() {
+    driver.findElement(By.linkText("Merge Leads")).click();
+    asserts.assertEquals(driver.getTitle(), "Merge Leads | opentaps CRM", "The user is on merge lead page");
+  }
+  
+  @Given("the user selects From Lead")
+  public void selectFromLead(DataTable leadNames) {
+    driver.findElement(By.xpath("//img[@alt='Lookup']")).click();
+    Set<String> allWindows = driver.getWindowHandles();
+    List<String> allhandles = new ArrayList<String>(allWindows);
+    driver.switchTo().window(allhandles.get(1));
+    driver.findElement(By.xpath("//input[@name='firstName']")).sendKeys(leadNames.cell(0, 0));
+  }
+  
+  @Given("the user selects To Lead")
+  public void selectToLead(DataTable leadNames) {
+    
   }
 }
