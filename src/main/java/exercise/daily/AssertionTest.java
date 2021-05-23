@@ -27,4 +27,14 @@ public class AssertionTest {
 		System.out.println("Test: C");
 		
 	}
+	
+	@Test
+	public void retryloop() {
+	  int count = 0;
+	  int maxRetry = 2;
+	  while(count < maxRetry) {
+	    System.err.println(count);
+	    count ++;
+	  }
+	}
 }
